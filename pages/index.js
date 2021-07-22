@@ -1,28 +1,39 @@
 import Head from 'next/head'
 
-const Property = () => (
-    <a
-      href="https://nextjs.org/docs"
-      className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-    >
-      <div className="flex justify-between text-center mb-2">
-        <h3 className="text-2xl font-bold">La Casa Verde</h3>
-        <h6>Score 9/10</h6>
-      </div>
-      <img src="https://th.bing.com/th/id/R.df35fd7c3e7b4d60720d6e176df9af3d?rik=vkdA8LddOImMqA&pid=ImgRaw" height="200" width="400" />
-      <p className="mt-4 text-xl">
-        Find in-depth information about Next.js features and API.
-      </p>
-  </a>
-)
+const Property = ({name, image, score, ...filters }) => {
 
-export default function Home() {
-  const properties = new Array(4)
+  return (
+      <a
+        href="https://nextjs.org/docs"
+        className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+      >
+        <div className="flex justify-between text-center mb-2">
+          <h3 className="text-2xl font-bold">{name}</h3>
+          <h6>{`Score ${score}/10`}</h6>
+        </div>
+        <img src="https://th.bing.com/th/id/R.df35fd7c3e7b4d60720d6e176df9af3d?rik=vkdA8LddOImMqA&pid=ImgRaw" height="200" width="400" />
+        <p className="mt-4 text-xl">{filters.areaFilters.bikesStationNearby ? 'Bike station nearby' : 'No bike station nearby'}</p>
+    </a>
+  )
+}
+
+export async function getStaticProps() {
+  const data = await fetch('http://localhost:3000/api/properties')
+  const properties = await data.json()
+
+  return {
+    props: {
+      properties
+    }
+  }
+}
+
+const Home = ({properties}) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>EcoHolics</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -35,7 +46,7 @@ export default function Home() {
         </h1>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          {new Array(4).fill(0).map(prop => <Property />)}
+          {properties?.map((property, index) => <Property key={index} {...property} />)}
         </div>
       </main>
 
@@ -53,3 +64,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
