@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import PropertyList from '../components/PropertyList'
 import ApartmentFilters from '../components/ApartmentFilters'
 import { greenTheme, lightTheme } from '../components/theme'
+import { data } from './api/properties'
 
 const APARTMENT_FILTER_OPTIONS = ['Sustainable Heating Source',
   'Water (Rain Water harvesting)',
@@ -29,13 +30,11 @@ const AREA_FILTER_OPTIONS = [
 ];
 
 export async function getStaticProps() {
-  const data = await fetch('http://localhost:3000/api/properties')
-  const properties = await data.json()
 
   return {
     props: {
-      properties: properties.result,
-      greenProperties: properties.result.filter(p => p.eco_friendly)
+      properties: data.result,
+      greenProperties: data.result.filter(p => p.eco_friendly)
     }
   }
 }
