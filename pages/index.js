@@ -64,7 +64,6 @@ const Home = ({ properties, greenProperties }) => {
             <Grid item md={3}>
               <ApartmentFilters label="Apartment filters" filters={APARTMENT_FILTER_OPTIONS} />
               <ApartmentFilters label="Area filters" filters={AREA_FILTER_OPTIONS} />
-
             </Grid>
             <Grid item md={9}>
               <PropertyList data={isGreenTheme ? greenProperties : properties} />

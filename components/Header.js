@@ -27,8 +27,9 @@ const Header = (props) => {
 
         <Grid container spacing={2}>
           <Grid item md={4}>
-          <AcUnitIcon color="primary" />
-            <Typography variant="h6" color="primary"><strong>Ecoholics</strong></Typography>
+          <img src={isGreenTheme ? '/green.svg' : '/blue.svg'} alt="Vercel Logo" className="h-4 ml-2" />
+          {/* <AcUnitIcon color="primary" />
+            <Typography variant="h6" color="primary"><strong>Ecoholics</strong></Typography> */}
           </Grid>
           <Grid item md={8}></Grid>
           <Grid item md={4}>
@@ -48,6 +49,7 @@ const Header = (props) => {
             </TextField>
           </Grid>
         </Grid>
+        <br/>
         <FormControlLabel
           control={
             <Switch

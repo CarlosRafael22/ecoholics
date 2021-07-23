@@ -9,7 +9,7 @@ const ApartmentFilters = (props) => {
   };
 
   return (
-    <List dense subheader={
+    <List dense disablePadding subheader={
       <ListSubheader component="div" id="nested-list-subheader">
         {label}
       </ListSubheader>
