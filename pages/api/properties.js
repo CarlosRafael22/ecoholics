@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const data = {
+export const data = {
 	"result":[
     {
 		"id" : "01000",
