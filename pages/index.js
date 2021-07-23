@@ -7,8 +7,9 @@ import ApartmentFilters from '../components/ApartmentFilters'
 import { greenTheme, lightTheme } from '../components/theme'
 import { data } from './api/properties'
 
-const APARTMENT_FILTER_OPTIONS = ['Sustainable Heating Source',
-  'Water (Rain Water harvesting)',
+const APARTMENT_FILTER_OPTIONS = [
+  'Sustainable Heating Source',
+  'Sustainable water',
   'Insulation',
   'Roof Solar system/Eco-friendly energy',
   'Recycling in property',
@@ -16,15 +17,14 @@ const APARTMENT_FILTER_OPTIONS = ['Sustainable Heating Source',
   'Garden area',
   'Plastic free products',
   'Ecological cleaning products',
-  'bicycle availability at the apartment',
+  'Bicycle availability at the apartment',
   'Homegrown/Homemade products'
 ];
 
 const AREA_FILTER_OPTIONS = [
   'Bikes stations nearby',
-  'Bus/Metro Stations',
+  'Bus/Metro stations nearby',
   'Scooter availability nearby',
-  'If reachable only by plane',
   'Bio shop nearby',
   'Attractions in walking distance'
 ];
