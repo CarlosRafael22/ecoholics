@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
             color="primary"
           />
         }
-        label="Eco friendly"
+        label="Eco search"
       />
       <Component {...pageProps} />
     </ThemeProvider>

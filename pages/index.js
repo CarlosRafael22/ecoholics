@@ -39,13 +39,7 @@ const Home = ({properties}) => {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <Typography variant="h6" color="primary">Welcome to EcoHolics!</Typography>
-        {/* <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            EcoHolics!
-          </a>
-        </h1> */}
+        <Typography variant="h6" color="primary">Holidu</Typography>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {properties?.map((property, index) => <Property key={index} {...property} />)}
