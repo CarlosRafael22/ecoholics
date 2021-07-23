@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core'
 import Head from 'next/head'
 
 const Property = ({name, image, score, ...filters }) => {
@@ -38,12 +39,13 @@ const Home = ({properties}) => {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
+        <Typography variant="h6" color="primary">Welcome to EcoHolics!</Typography>
+        {/* <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
             EcoHolics!
           </a>
-        </h1>
+        </h1> */}
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {properties?.map((property, index) => <Property key={index} {...property} />)}
