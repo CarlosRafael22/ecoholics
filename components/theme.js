@@ -14,6 +14,7 @@ export const greenTheme = createTheme({
   palette: {
     primary: {
       main: green[500],
+      contrastText: '#fff'
     }
   },
 });
